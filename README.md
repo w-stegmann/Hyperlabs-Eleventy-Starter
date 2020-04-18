@@ -58,14 +58,14 @@ Neue Seite können direkt im `src`-Ordner angelegt werden. Auch Unterordner sind
 Um beispielsweise eine Team-Seite anzulegen, erstellt man eine neue Datei `team.njk` im Ordner `src`. Diese Datei muss folgenden Kopf enthalten:
 ```
 ---
-title: Startseite
+title: Team
 description: Page meta description in 150 characters
 layout: main.njk
 ---
-<p>Hallo Welt. Du befindest dich auf der {{ title }}.</p>
+<p>Hallo Welt. Du befindest dich auf der {{ title }}-Seite.</p>
 ```
 
-Dort werden zum einen der Titel der Seite und die Meta-Description definiert. Weitere Variablen können im Kopf beliebig [hinzugefügt](https://www.11ty.dev/docs/layouts/) werden. Unterhalb des Kopfes bginnt der eigentliche Seiten-Inhalt. `layout: main.njk` bestimmt die Layout-Datei, in die der Seiten-Inhalt eingebettet wird. Diese Layouts befinden sich im Ordner `_includes`. In diesem Beispiel wird `_includes/main.njk` referenziert. Da `_includes` als Standard-Ordner bestimmt wurde, wird dieser weggelassen werden.
+Dort werden Seitentitel und die Meta-Description definiert. Weitere Variablen können im Kopf beliebig [hinzugefügt](https://www.11ty.dev/docs/layouts/) werden. Unterhalb des Kopfes beginnt der eigentliche Seiten-Inhalt. `layout: main.njk` bestimmt die Layout-Datei, in die der Seiten-Inhalt eingebettet wird. Diese Layouts befinden sich im Ordner `_includes`. In diesem Beispiel wird `_includes/main.njk` referenziert. Da `_includes` als Standard-Ordner bestimmt wurde, wird dieser weggelassen.
 
 #### ```dist```
 
@@ -84,7 +84,7 @@ Hier können Schriftdateien abgelegt werden, die in den Styles referenziert werd
 Bild-Dateien und Icons können hier abgelegt werden. Im HTML werden sie folgendermaßen eingebunden:
 
 ```
-<img src="/images/icons/casino_am_kornmarkt.svg" alt="">
+<img src="/images/icons/casino_am_kornmarkt.svg" alt="…">
 ````
 
 #### ```src/orte```
@@ -92,9 +92,9 @@ Bild-Dateien und Icons können hier abgelegt werden. Im HTML werden sie folgende
 Hier werden die einzelnen Orte abgelegt.
 
 ##### Neuen Ort anlegen
-Neue Orte werden im Ordner `src/orte` angelegt. 
+Neue Orte werden im Ordner `orte` angelegt. 
 
-Um beispielsweise den Ort _Casino am Kornmarkt_ anzulegen, erstellt man eine neue Datei `casino-am-kornmarkt.njk` im Ordner `src/orte`. Diese Datei muss folgenden Kopf enthalten:
+Um beispielsweise den Ort _Casino am Kornmarkt_ anzulegen, erstellt man eine neue Datei `casino-am-kornmarkt.njk` im Ordner `orte`. Diese Datei muss folgenden Kopf enthalten:
 
 ```
 ---
@@ -114,7 +114,7 @@ layout: single-ort.njk
 ---
 ```
 
-Wie bereits im Beispiel oben mit den Seiten, werden hier Titel und Meta-Description festgelegt. Der Tag _Orte_ erstellt eine [Collection](https://www.11ty.dev/docs/collections/) (A collection allows you to group content) aller Orte. Auch hier wird ebenfalls wieder ein Layout für alle Orte definiert – dieses befindet sich unter `_includes/single-ort.njk`.
+Wie bereits im Beispiel oben, werden hier Titel und Meta-Description festgelegt. Der Tag _Orte_ erstellt eine [Collection](https://www.11ty.dev/docs/collections/) (A collection allows you to group content) aller Orte. Auch hier wird ebenfalls wieder ein Layout für alle Orte definiert – dieses befindet sich unter `_includes/single-ort.njk`.
 
 Für einen Ort werden noch weitere Variablen wie Name, Adresse, Breiten- und Längengrad etc. festgelegt. Diese Werte können mit den entsprechenden Template-Tags – {{ name }}, {{ address }}, {{ latitude }}, … – aufgerufen werden. 
 
@@ -143,10 +143,10 @@ Code, der für die Anzeige der Karte verantwortlich ist, liegt unter `scripts/mo
 
 #### ```src/styles```
 
-Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung in einzelne Dateien statt, um die Übersichtlichkeit zu wahren. Die Einstiegsdatei zum Import ist `styles/style.scss`. SCSS oder klassisches CSS kann aber auch direkt in die `styles/_main.scss` geschrieben werden. SCSS bietet Vorteile wie Verschachtelungen im Code, Variablen, oder Schleifen, kann aber am Anfang verwirrend sein. Deshalb ist auch reines CSS für den Anfang kein Problem.
+Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung in einzelne Dateien statt, um die Übersichtlichkeit zu wahren. Die Einstiegsdatei zum Import ist `styles/style.scss`. SCSS oder klassisches CSS kann aber auch direkt in die `styles/_main.scss` geschrieben werden. SCSS bietet Vorteile wie Verschachtelungen im Code, Variablen, oder Schleifen, kann am Anfang aber verwirrend sein. Deshalb ist auch reines CSS für den Anfang kein Problem.
 
 ## Finalisieren
 1. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
-2. Im Terminal `npm run build ` eingeben und mit Enter bestätigen. Der Build-Prozess wird jetzt gestartet – das kann ein wenig dauern.
+2. Im Terminal `npm run build` eingeben und mit Enter bestätigen. Der Build-Prozess wird jetzt gestartet – das kann ein wenig dauern.
 3. Inhalt des Ordners `dist` per FTP auf den Webspace laden. _Hinweis:_ Durch die absoluten Pfadangaben im Theme wie `/styles/style.css`, kann die Seite nicht in einem Unterordner einer Domain abgelegt werden. Alternativ kann hier eine Subdomain sth.example.com angelegt werden.
 4. [Booyakasha!](https://www.youtube.com/watch?v=aKBYG4jb5uc)
