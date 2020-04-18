@@ -1,7 +1,7 @@
 
 <h3 align="center">Hyper⚡labs Eleventy Starter</h3>
 <p align="center">Starter theme für den static site generator Eleventy zur Entwicklung ortsbasierter Websites.</p>
-<p align="center"><a href="https://hyperlabs-eleventy-starter-demo.netlify.app/">Demo</a></p>
+<p align="center"><a href="https://hyperlabs-eleventy-starter-demo.netlify.app/" target="_blank" rel="noreferrer noopener">Demo</a></p>
 
 ## Tools
 
@@ -44,6 +44,58 @@ Falls node.js noch nicht installiert ist, muss dies zuerst erledigt werden:
 2. Lokale URL des Entwicklungsservers: [http://localhost:8080](http://localhost:8080)
 3. Server-Einstellungen befinden sich in `.lightserverrc`.
 
+### Ordner-Struktur
+#### ```src```
+
+Im Ordner `src` befinden sich alle Quell-Dateien, aus denen später die fertige Seite generiert wird. 
+
+#### ```dist```
+
+Die fertige Seite kann mit dem Befehl `npm run build` generiert werden. Sobald der Prozess abgeschlossen ist, wird der Ordner `dist` erstellt. Der Inhalt dieses Ordners kann per FTP-Programm auf den Webspace geladen werden. Änderungen müssen immer im `src`-Ordner vorgenommen werden, denn der `dist`-Ordner wird bei jedem Build-Prozess gelöscht und komplett neu generiert. Änderungen gingen somit verloren.
+
+#### Neue Seite anlegen
+Neue Seite können direkt im `src`-Ordner angelegt werden. Auch Unterordner sind möglich – siehe z.b. `src/orte` und das Ergebnis in `dist/orte`.
+
+Um beispielsweise eine Team-Seite anzulegen, erstellt man eine neue Datei `team.njk` im Ordner `src`. Diese Datei muss folgenden Kopf enthalten:
+```
+---
+title: Startseite
+description: Page meta description in 150 characters
+layout: main.njk
+---
+<p>Hallo Welt. Du befindest dich auf der {{ title }}.</p>
+```
+
+Dort werden zum einen der Titel der Seite und die Meta-Description definiert. Weitere Variablen können im Kopf beliebig [hinzugefügt](https://www.11ty.dev/docs/layouts/) werden. Unterhalb des Kopfes bginnt der eigentliche Seiten-Inhalt. `layout: main.njk` bestimmt die Layout-Datei, in die der Seiten-Inhalt eingebettet wird. Diese Layouts befinden sich im Ordner `_includes`. In diesem Beispiel wird `_includes/main.njk` referenziert. Da `_includes` als Standard-Ordner bestimmt wurde, wird dieser weggelassen werden.
+
+#### ```src/_includes```
+
+In diesem Ordner befinden sich alle wiederverwendbaren Layouts der Seite. Das Hauptlayout heißt ``main.njk``.
+
+#### ```src/fonts```
+
+Hier können Schriftdateien abgelegt werden, die in den Styles referenziert werden können.
+
+#### ```src/images```
+
+Bild-Dateien und Icons können hier abgelegt werden. Im HTML werden sie folgendermaßen eingebunden:
+
+```
+<img src="/images/icons/casino_am_kornmarkt.svg" alt="">
+````
+
+#### ```src/orte```
+
+#### ```src/scripts```
+
+Javascript kann in Module gesplittet und in die ``script.js`` importiert werden oder direkt dort eingefügt werden. Eine Unterteilung in Module dient der Übersichtlichkeit des Codes.
+
+Code, der für die Anzeige der Karte verantwortlich ist, liegt unter `scripts/modules/mapbox-list.js`. 
+
+#### ```src/styles```
+
+Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung in einzelne Dateien statt, um die Übersichtlichkeit zu wahren. Die Einstiegsdatei zum Import ist `styles/style.scss`. SCSS oder klassisches CSS kann aber auch direkt in die `styles/_main.scss` geschrieben werden. SCSS bietet Vorteile wie Verschachtelungen im Code, Variablen, oder Schleifen, kann aber am Anfang verwirrend sein. Deshalb ist auch reines CSS für den Anfang kein Problem.
+
 ## Finalisieren
-1. ` $ npm run build ` im Terminal ausführen
-2. Inhalt des Ordner `dist` per FTP auf den Webspace laden
+1. `npm run build ` im Terminal ausführen
+2. Inhalt des Ordners `dist` per FTP auf den Webspace laden
