@@ -1,6 +1,6 @@
-Hyper⚡labs Eleventy Starter
-============================
-Starter theme für den static site generator Eleventy zur Entwicklung ortsbasierter Websites.
+
+<h1 align="center">Hyper⚡labs Eleventy Starter</h1>
+<p align="center">Starter theme für den static site generator Eleventy zur Entwicklung ortsbasierter Websites.</p>
 
 ## Tools
 
@@ -18,6 +18,11 @@ A rich and powerful templating language for JavaScript.
 Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 - [Website](https://sass-lang.com/)
 - [Dokumentation](https://sass-lang.com/guide/)
+
+### Bootstrap
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+- [Website](https://getbootstrap.com/)
+- [Dokumentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
 ### Mapbox GL JS
 Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.
