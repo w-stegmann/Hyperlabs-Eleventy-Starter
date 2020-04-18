@@ -1,5 +1,6 @@
 Hyper⚡labs Eleventy Starter
 ============================
+Starter theme für den static site generator Eleventy zur Entwicklung ortsbasierter Websites.
 
 ## Tools
 
@@ -24,11 +25,13 @@ Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps 
 - [Dokumentation](https://docs.mapbox.com/mapbox-gl-js/api/)
 
 ## Installieren
-1. [Starter theme herunterladen](https://www.mapbox.com/)
-2. 
-```
-$ npm install
-```
+Falls node.js noch nicht installiert ist, muss dies zuerst erledigt werden:
+
+1. [Node.js herunterladen](https://nodejs.org/en/) und installieren 
+2. [Starter theme herunterladen](https://github.com/w-stegmann/Hyperlabs-Eleventy-Starter/archive/master.zip)
+3. master.zip entpacken und Ordner öffnen
+4. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal`eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
+5. Im Terminal `npm install` eingeben und bestätigen. Jetzt werden alle benötigten Tools installiert. Das kann eine Weile dauern.
 
 ## Entwickeln
 1. ``` $ npm run dev ``` startet den Entwicklungsserver und öffnet ein Browserfenster. Code-Änderungen werden direkt ohne Aktualisierung angezeigt.
