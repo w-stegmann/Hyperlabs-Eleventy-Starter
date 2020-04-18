@@ -25,6 +25,11 @@ Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quick
 - [Website](https://getbootstrap.com/)
 - [Dokumentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
+### Lozad
+Highly performant, light and configurable lazy loader in pure JS with no dependencies for images, iframes and more, using IntersectionObserver API.
+- [Website](https://apoorv.pro/lozad.js/)
+- [Dokumentation](https://apoorv.pro/lozad.js/#usage)
+
 ### Mapbox GL JS
 Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.
 - [Website](https://www.mapbox.com/)
