@@ -31,18 +31,21 @@ Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps 
 - [Dokumentation](https://docs.mapbox.com/mapbox-gl-js/api/)
 
 ## Installieren
-Falls node.js noch nicht installiert ist, muss dies zuerst erledigt werden:
+Falls node.js noch nicht installiert ist, muss das zuerst erledigt werden:
 
 1. [Node.js herunterladen](https://nodejs.org/en/) und installieren 
 2. [Starter theme herunterladen](https://github.com/w-stegmann/Hyperlabs-Eleventy-Starter/archive/master.zip)
 3. `master.zip` entpacken und Ordner öffnen
-4. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal`eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
+4. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
 5. Im Terminal `npm install` eingeben und mit Enter bestätigen. Jetzt werden alle benötigten Tools installiert. Das kann eine Weile dauern. Danach bist du bereit zum Entwickeln!
 
 ## Entwickeln
-1. ``` $ npm run dev ``` startet den Entwicklungsserver und öffnet ein Browserfenster. Code-Änderungen werden direkt im Browser angezeigt.
-2. Lokale URL des Entwicklungsservers: [http://localhost:8080](http://localhost:8080)
-3. Server-Einstellungen befinden sich in `.lightserverrc`.
+1. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen. 
+2. Im Terminal `npm run dev` eingeben und mit Enter bestätigen. Der lokale Entwicklungsserver ist jetzt gestartet und öffnet ein Browserfenster. Code-Änderungen werden direkt im Browser angezeigt.
+
+Lokale URL des Entwicklungsservers: [http://localhost:8080](http://localhost:8080)
+
+Server-Einstellungen befinden sich in `.lightserverrc`.
 
 ### Ordner-Struktur
 #### ```src```
@@ -97,5 +100,7 @@ Code, der für die Anzeige der Karte verantwortlich ist, liegt unter `scripts/mo
 Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung in einzelne Dateien statt, um die Übersichtlichkeit zu wahren. Die Einstiegsdatei zum Import ist `styles/style.scss`. SCSS oder klassisches CSS kann aber auch direkt in die `styles/_main.scss` geschrieben werden. SCSS bietet Vorteile wie Verschachtelungen im Code, Variablen, oder Schleifen, kann aber am Anfang verwirrend sein. Deshalb ist auch reines CSS für den Anfang kein Problem.
 
 ## Finalisieren
-1. `npm run build ` im Terminal ausführen
-2. Inhalt des Ordners `dist` per FTP auf den Webspace laden
+1. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
+2. Im Terminal `npm run build ` eingeben und mit Enter bestätigen. Der Build-Prozess wird jetzt gestartet – das kann ein wenig dauern.
+3. Inhalt des Ordners `dist` per FTP auf den Webspace laden-
+4. [Booyakasha!](https://www.youtube.com/watch?v=aKBYG4jb5uc)
