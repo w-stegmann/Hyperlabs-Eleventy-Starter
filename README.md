@@ -58,7 +58,7 @@ Server-Einstellungen befinden sich in `.lightserverrc`.
 Im Ordner `src` befinden sich alle Quell-Dateien, aus denen später die fertige Seite generiert wird. 
 
 ##### Neue Seite anlegen
-Neue Seite können direkt im `src`-Ordner angelegt werden. Auch Unterordner sind möglich – siehe z.b. `src/orte` und das Ergebnis in `dist/orte`.
+Neue Seiten können direkt im `src`-Ordner angelegt werden. Auch Unterordner sind möglich – siehe z.b. `src/orte` und das Ergebnis in `dist/orte`.
 
 Um beispielsweise eine Team-Seite anzulegen, erstellt man eine neue Datei `team.njk` im Ordner `src`. Diese Datei muss folgenden Kopf enthalten:
 ```
