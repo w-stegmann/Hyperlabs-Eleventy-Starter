@@ -52,11 +52,7 @@ Server-Einstellungen befinden sich in `.lightserverrc`.
 
 Im Ordner `src` befinden sich alle Quell-Dateien, aus denen später die fertige Seite generiert wird. 
 
-#### ```dist```
-
-Die fertige Seite kann mit dem Befehl `npm run build` generiert werden. Sobald der Prozess abgeschlossen ist, wird der Ordner `dist` erstellt. Der Inhalt dieses Ordners kann per FTP-Programm auf den Webspace geladen werden. Änderungen müssen immer im `src`-Ordner vorgenommen werden, denn der `dist`-Ordner wird bei jedem Build-Prozess gelöscht und komplett neu generiert. Änderungen gingen somit verloren.
-
-#### Neue Seite anlegen
+##### Neue Seite anlegen
 Neue Seite können direkt im `src`-Ordner angelegt werden. Auch Unterordner sind möglich – siehe z.b. `src/orte` und das Ergebnis in `dist/orte`.
 
 Um beispielsweise eine Team-Seite anzulegen, erstellt man eine neue Datei `team.njk` im Ordner `src`. Diese Datei muss folgenden Kopf enthalten:
@@ -70,6 +66,10 @@ layout: main.njk
 ```
 
 Dort werden zum einen der Titel der Seite und die Meta-Description definiert. Weitere Variablen können im Kopf beliebig [hinzugefügt](https://www.11ty.dev/docs/layouts/) werden. Unterhalb des Kopfes bginnt der eigentliche Seiten-Inhalt. `layout: main.njk` bestimmt die Layout-Datei, in die der Seiten-Inhalt eingebettet wird. Diese Layouts befinden sich im Ordner `_includes`. In diesem Beispiel wird `_includes/main.njk` referenziert. Da `_includes` als Standard-Ordner bestimmt wurde, wird dieser weggelassen werden.
+
+#### ```dist```
+
+Die fertige Seite kann mit dem Befehl `npm run build` generiert werden. Sobald der Prozess abgeschlossen ist, wird der Ordner `dist` erstellt. Der Inhalt dieses Ordners kann per FTP-Programm auf den Webspace geladen werden. Änderungen müssen immer im `src`-Ordner vorgenommen werden, denn der `dist`-Ordner wird bei jedem Build-Prozess gelöscht und komplett neu generiert. Änderungen gingen somit verloren.
 
 #### ```src/_includes```
 
@@ -89,6 +89,52 @@ Bild-Dateien und Icons können hier abgelegt werden. Im HTML werden sie folgende
 
 #### ```src/orte```
 
+Hier werden die einzelnen Orte abgelegt.
+
+##### Neuen Ort anlegen
+Neue Orte werden im Ordner `src/orte` angelegt. 
+
+Um beispielsweise den Ort _Casino am Kornmarkt_ anzulegen, erstellt man eine neue Datei `casino-am-kornmarkt.njk` im Ordner `src/orte`. Diese Datei muss folgenden Kopf enthalten:
+
+```
+---
+title: Casino am Kornmarkt
+description: Page meta description in 150 characters
+tags: orte
+
+name: Casino am Kornmarkt
+address: Kornmarkt 1, 54290 Trier
+latitude: 49.7547115
+longitude: 6.6390111
+icon: /images/icons/casino_am_kornmarkt.svg
+featuredimage: https://picsum.photos/600/300
+teaser: Das klassizistische Gebäude am Kornmarkt, einer der wichtigsten Großbauten der preußischen Zeit, wurde 1824/25 von Baumeister Johann Georg Wolff als Vereinshaus der 1817 gegründeten „Literärischen Casino-Gesellschaft“ errichtet.
+
+layout: single-ort.njk
+---
+```
+
+Wie bereits im Beispiel oben mit den Seiten, werden hier Titel und Meta-Description festgelegt. Der Tag _Orte_ erstellt eine [Collection](https://www.11ty.dev/docs/collections/) (A collection allows you to group content) aller Orte. Auch hier wird ebenfalls wieder ein Layout für alle Orte definiert – dieses befindet sich unter `_includes/single-ort.njk`.
+
+Für einen Ort werden noch weitere Variablen wie Name, Adresse, Breiten- und Längengrad etc. festgelegt. Diese Werte können mit den entsprechenden Template-Tags – {{ name }}, {{ address }}, {{ latitude }}, … – aufgerufen werden. 
+
+##### ```src/orte/index.njk```
+
+Diese Datei zeigt die Übersicht der Orte an und zeigt, wie man mit einem [Loop](https://www.11ty.dev/docs/collections/#example-a-list-of-links-to-all-eleventy-generated-content) alle Seiten einer [Collection](https://www.11ty.dev/docs/collections/) anzeigen kann.
+
+```
+{%- for ort in collections.orte -%}
+    <div class="card mb-3">
+        <img src="{{ ort.data.featuredimage }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ ort.data.title }}</h5>
+            <p class="text-muted">{{ ort.data.teaser }}</p>
+            <a class="fly-to btn btn-primary" data-coordinates="[{{ ort.data.longitude }},{{ ort.data.latitude }}]" href="{{ ort.url }}" role="button">Anschauen</a>
+        </div>
+    </div>
+{%- endfor -%}
+```
+
 #### ```src/scripts```
 
 Javascript kann in Module gesplittet und in die ``script.js`` importiert werden oder direkt dort eingefügt werden. Eine Unterteilung in Module dient der Übersichtlichkeit des Codes.
@@ -102,5 +148,5 @@ Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung
 ## Finalisieren
 1. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
 2. Im Terminal `npm run build ` eingeben und mit Enter bestätigen. Der Build-Prozess wird jetzt gestartet – das kann ein wenig dauern.
-3. Inhalt des Ordners `dist` per FTP auf den Webspace laden-
+3. Inhalt des Ordners `dist` per FTP auf den Webspace laden.
 4. [Booyakasha!](https://www.youtube.com/watch?v=aKBYG4jb5uc)
