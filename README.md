@@ -40,7 +40,7 @@ Falls node.js noch nicht installiert ist, muss das zuerst erledigt werden:
 
 1. [Node.js herunterladen](https://nodejs.org/en/) und installieren 
 2. [Starter theme herunterladen](https://github.com/w-stegmann/Hyperlabs-Eleventy-Starter/archive/master.zip)
-3. `Hyperlabs-Eleventy-Starter-master.zip` entpacken und Ordner öffnen
+3. `Hyperlabs-Eleventy-Starter-master.zip` entpacken
 4. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
 5. Im Terminal `npm install` eingeben und mit Enter bestätigen. Jetzt werden alle benötigten Tools installiert. Das kann eine Weile dauern. Danach bist du bereit zum Entwickeln!
 
