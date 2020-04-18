@@ -148,5 +148,5 @@ Hier lagern die Stylesheets der Seite. Auch hier findet wieder eine Unterteilung
 ## Finalisieren
 1. Terminal öffnen – `CMD + Leertaste` öffnet Spotlight, dann `Terminal` eingeben und mit Enter bestätigen. Danach in den Theme-Ordner navigieren – `cd /pfad/zum/ordner/Hyperlabs-Eleventy-Starter-master` – gebt dazu einfach `cd` und ein Leerzeichen ins Terminal ein und [zieht den Theme-Ordner ins Terminal](https://www.youtube.com/watch?v=6-rk1OKIhB0). Der Pfad wird dann automatisch eingetragen. Mit Enter bestätigen.
 2. Im Terminal `npm run build ` eingeben und mit Enter bestätigen. Der Build-Prozess wird jetzt gestartet – das kann ein wenig dauern.
-3. Inhalt des Ordners `dist` per FTP auf den Webspace laden.
+3. Inhalt des Ordners `dist` per FTP auf den Webspace laden. _Hinweis:_ Durch die absoluten Pfadangaben im Theme wie `/styles/style.css`, kann die Seite nicht in einem Unterordner einer Domain abgelegt werden. Alternativ kann hier eine Subdomain sth.example.com angelegt werden.
 4. [Booyakasha!](https://www.youtube.com/watch?v=aKBYG4jb5uc)
