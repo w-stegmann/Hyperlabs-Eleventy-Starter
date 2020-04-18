@@ -1,6 +1,7 @@
 
-<h1 align="center">Hyper⚡labs Eleventy Starter</h1>
+<h3 align="center">Hyper⚡labs Eleventy Starter</h3>
 <p align="center">Starter theme für den static site generator Eleventy zur Entwicklung ortsbasierter Websites.</p>
+<p align="center"><a href="https://hyperlabs-eleventy-starter-demo.netlify.app/">Demo</a></p>
 
 ## Tools
 
