@@ -1,0 +1,33 @@
+---json
+{
+"permalink": "orte/orte.geojson",
+"eleventyExcludeFromCollections": true
+}
+---
+{
+	"type": "FeatureCollection",
+	"features": [
+		{%- for ort in collections.orte | reverse -%}
+			{
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [
+						"{{ ort.data.longitude }}",
+						"{{ ort.data.latitude }}"
+					]
+				},
+				"properties": {
+					"icon": {
+						"className": "map-marker",
+						"url": "{{ ort.data.icon }}",
+						"iconSize": null
+					},
+					"id": "{{ ort.data.name | slug }}",
+					"title": "{{ ort.data.name }}",
+					"href": "{{ ort.url }}"
+				}
+			} {% if not loop.last %},{% endif %}
+		{%- endfor -%}
+	]
+}

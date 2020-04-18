@@ -1,0 +1,39 @@
+---
+title: Orte
+description: Page meta description in 150 characters
+bodyClass: orteList
+---
+
+{% extends "main.njk" %}
+
+{% block content %}
+	<div class="container orteWrapper">
+		<div class="row">
+			<div class="col-4 orteSidebar p-3">
+				{%- for ort in collections.orte -%}
+					<div class="card mb-3">
+						<img src="{{ ort.data.featuredimage }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{ ort.data.title }}</h5>
+							<p class="text-muted">{{ ort.data.teaser }}</p>
+							<a class="fly-to btn btn-primary" data-coordinates="[{{ ort.data.longitude }},{{ ort.data.latitude }}]" href="{{ ort.url }}" role="button">Anschauen</a>
+						</div>
+					</div>
+				{%- endfor -%}
+			</div>
+			<div class="col-8 px-0 orteMap">
+				<div id="mapbox"></div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block styles %}
+	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css">
+	<link rel="stylesheet" href="/styles/style.css">
+{% endblock %}
+
+{% block scripts %}
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
+	<script src="/scripts/script.js"></script>
+{% endblock %}

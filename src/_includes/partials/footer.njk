@@ -1,0 +1,40 @@
+<footer class="bg-white mt-5">
+	<div class="container py-5">
+		<div class="row py-4">
+			<div class="col-5">
+				<h6 class="h4 text-uppercase mb-3">Hyper⚡labs</h6>
+				<p class="text-muted">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			</div>
+			<div class="col-4 offset-1">
+				<h6 class="text-uppercase font-weight-bold mb-4">Orte</h6>
+				<ul class="list-unstyled footerSubnav mb-0">
+					{%- for ort in collections.orte -%}
+						<li class="mb-2 {% if ort.url == page.url %} active {% endif %}"><a href="{{ ort.url }}" class="text-muted">{{ ort.data.title }}</a></li>
+					{%- endfor -%}
+				</ul>
+			</div>
+			<div class="col-2">
+				<h6 class="text-uppercase font-weight-bold mb-4">Mehr über uns</h6>
+				<ul class="list-unstyled footerSubnav mb-0">
+					<li class="mb-2 {% if "/team/" == page.url %} active {% endif %}"><a href="/team" class="text-muted">Team</a></li>
+					<li class="mb-2 {% if "/kontakt/" == page.url %} active {% endif %}"><a href="/kontakt" class="text-muted">Kontakt</a></li>
+					<li class="mb-2 {% if "/datenschutz/" == page.url %} active {% endif %}"><a href="/datenschutz" class="text-muted">Datenschutz</a></li>
+					<li class="mb-2 {% if "/impressum/" == page.url %} active {% endif %}"><a href="/impressum" class="text-muted">Impressum</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-dark py-3">
+		<div class="container">
+			<div class="row text-muted">
+				<div class="col">
+					2020
+				</div>
+				<div class="col">
+					Hyperlabs Eleventy Boilerplate
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<title>{{title}} | Hyperlabs Eleventy Boilerplate</title>
+
+	{% block styles %}
+	<link rel="stylesheet" href="/styles/style.css">
+	{% endblock %}
+</head>
+
+<body{% if bodyClass %} class="{{bodyClass}}"{% endif %}>
+	{% include "partials/header.njk" %}
+
+	<main id="content">
+		<div class="container-xl">
+			{% block content %}
+				{{ content | safe }}
+			{% endblock %}
+		</div>
+	</main>
+
+	{% include "partials/footer.njk" %}
+
+	{% block scripts %}
+	<script src="/scripts/script.js"></script>
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+---
+bodyClass: orteSingle
+---
+
+{% extends "main.njk" %}
+
+{% block content %}
+	<div class="container orteSingleWrapper">
+		<div class="row">
+			<div class="col px-0">
+				<div id="mapbox" data-coordinates="[{{ longitude }},{{ latitude }}]"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col p-3 pt-4">
+				<span class="text-uppercase h6 text-muted">{{ address }}</span>
+				<h1 class="mt-0">{{ name }}</h1>
+
+				<img src="{{ featuredimage }}" class="rounded float-left mt-2 mr-3 mb-3" style="max-width: 512px; height: auto" alt="..." />
+
+				{{ content | safe }}
+
+				<a href="https://www.google.com/maps/dir//{{ latitude }},{{ longitude }}" class="btn btn-primary btn" target="_blank" rel="noopener noreferrer">Navigiere mit Google Maps</a>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block styles %}
+	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css">
+	<link rel="stylesheet" href="/styles/style.css">
+{% endblock %}
+
+{% block scripts %}
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
+	<script src="/scripts/script.js"></script>
+{% endblock %}

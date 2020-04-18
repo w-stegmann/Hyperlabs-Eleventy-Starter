@@ -1,0 +1,44 @@
+---
+title: Kontakt
+description: Page meta description in 150 characters
+layout: main.njk
+---
+
+<div class="row mb-3">
+	<div class="col">
+		<h1>Kontakt</h1>
+	</div>
+</div>
+<div class="form-holder">
+	<form name="contactForm" id="contactForm" class="row contact-form needs-validation" novalidate>
+		<div id="input-name" class="col-12 mb-3">
+			<label for="terminformular-name">Name <abbr title="Pflichtfeld">*</abbr></label>
+			<input type="text" name="name" class="form-control name" id="terminformular-name" placeholder="Max Mustermann" required />
+			<div class="invalid-feedback">Bitte Namen angeben</div>
+		</div>
+
+		<div id="input-email" class="col-lg-12 mb-3">
+			<label for="terminformular-email">E-Mail-Adresse <abbr title="Pflichtfeld">*</abbr></label>
+			<input type="text" name="email" class="form-control email" id="terminformular-email" placeholder="hey@hyperlabs.de" aria-describedby="emailHelp" required>
+			<div class="invalid-feedback">Bitte E-Mail-Adresse angeben</div>
+		</div>
+
+		<div id="input-message" class="col-lg-12 mb-3">
+			<label for="terminformular-text">Deine Nachricht <abbr title="Pflichtfeld">*</abbr></label>
+			<textarea class="form-control message" name="message" rows="7" id="terminformular-text" aria-describedby="textHelp" required></textarea>
+			<div class="invalid-feedback">Bitte Grund Nachricht eingeben</div>
+		</div>
+		<div class="col-lg-12 mb-3">
+			<p class="font-weight-bold" style="margin-bottom: 5px">Zustimmung zur Datenverarbeitung <abbr title="Pflichtfeld">*</abbr></p>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="terminformular-data" name="data" value="✓ Zustimmung erteilt" required>
+				<label class="custom-control-label" for="terminformular-data">Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass Ihre Daten zur Bearbeitung Ihres Anliegens verwendet werden (weitere Informationen und Widerrufshinweise finden Sie in der Datenschutzerklärung).</label>
+				<div class="invalid-feedback">Bitte der Datenverarbeitung zustimmen</div>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<button type="submit" class="btn btn-primary">Nachricht senden</button>
+			<span class="status-message"></span>
+		</div>
+	</form>
+</div>

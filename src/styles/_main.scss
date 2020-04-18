@@ -1,0 +1,16 @@
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  scroll-behavior: smooth;
+  scroll-padding-top: $mainNavigation--height;
+}
